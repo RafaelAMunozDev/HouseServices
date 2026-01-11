@@ -9,6 +9,7 @@ También al final de este documento, veremos los archvios necesarios para que la
 - Docker + Docker Compose
 - (opcional) Java 17 si se ejecuta el backend sin Docker
 - Flutter si se ejecuta la app
+- **Importante** Hay que tener los servicios **AUTH**, **STORAGE** y **FIRESTORE** activos en la consola del proyecto de firebase que se vaya a utilizar con sus respectivas reglas configuradas, ya que si no, no funcionarán esos servicios respectivamente.
 
 ---
 
@@ -153,9 +154,13 @@ Para ejecutar la app ( obviamente teniendo flutter instalado ) se deberá ejecut
 
 Por último, la app Flutter obtiene la URL del backend mediante una variable de entorno
 definida en tiempo de ejecución. Por ello es obligatorio arrancar la app indicando la URL del backend con
-`--dart-define`.
+`--dart-define`. 
 
 `flutter run --dart-define=URL_BASE={URL_DEL_BACKEND}/api`
+
+Un alternativa para ejecutar la APP sin el comando anterior, es que se deberá cambiar en el fichero `frontend\lib\services\ApiService.dart`, la URL que apunta hacia el backend. Especificamente en esta linea:
+
+-`defaultValue: 'http://10.0.2.2:8080/api'`
 
 ## Información adicional
 

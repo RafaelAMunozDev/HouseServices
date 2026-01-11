@@ -10,10 +10,7 @@ class FavoritosService {
   factory FavoritosService() => _instancia;
   FavoritosService._interno();
 
-  final FirebaseFirestore _firestore = FirebaseFirestore.instanceFor(
-    app: Firebase.app(),
-    databaseId: 'houseservices-db',
-  );
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   final ApiService _apiService = ApiService();
   final UsuarioService _usuarioService = UsuarioService();

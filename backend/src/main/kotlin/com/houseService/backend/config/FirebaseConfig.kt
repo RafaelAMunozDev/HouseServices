@@ -31,7 +31,7 @@ class FirebaseConfig {
 
         // bucket configurable por entorno, si no hay variable se usa el de siempre
         val bucket = System.getenv("FIREBASE_STORAGE_BUCKET")
-            ?: "houseservices-7f45b.firebasestorage.app"
+            ?: throw IllegalStateException("FIREBASE_STORAGE_BUCKET no definido")
 
         val options = FirebaseOptions.builder()
             .setCredentials(GoogleCredentials.fromStream(serviceAccount))

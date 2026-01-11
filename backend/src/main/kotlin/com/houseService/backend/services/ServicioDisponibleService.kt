@@ -2,6 +2,7 @@
 
 package com.houseService.backend.services
 
+import com.google.firebase.cloud.StorageClient
 import com.houseService.backend.dto.response.ServicioOfrecidoResponse
 import com.houseService.backend.models.ServicioDisponible
 import com.houseService.backend.repositories.ServicioDisponibleRepository
@@ -162,9 +163,11 @@ class ServicioDisponibleService(
 
         if (url.contains("storage.googleapis.com")) {
             try {
-                val bucket = "houseservices-7f45b.firebasestorage.app"
+                val bucket = StorageClient.getInstance().bucket().name
                 val path = url.substringAfter("$bucket/")
-                val encodedPath = path.split("/").joinToString("%2F") { it.encodeURLComponent() }
+                val encodedPath = path.split("/")
+                    .joinToString("%2F") { it.encodeURLComponent() }
+
                 return "https://firebasestorage.googleapis.com/v0/b/$bucket/o/$encodedPath?alt=media"
             } catch (_: Exception) {
                 return url
