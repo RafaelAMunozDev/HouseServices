@@ -1,43 +1,49 @@
-# ---------- flutter ----------
+# ide / sistema
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# flutter (frontend)
 frontend/build/
 frontend/.dart_tool/
-frontend/.idea/
 frontend/.metadata
+frontend/.idea/
 
-# android
+# android 
 frontend/android/.gradle/
 frontend/android/local.properties
 frontend/android/key.properties
 
-# ---------- backend ----------
+# backend (kotlin / spring)
 backend/build/
 backend/.gradle/
 backend/.idea/
 backend/*.iml
 
-# backend local (no subir)
+# configs locales 
 backend/local.properties
 backend/http-client.env.json
 
-# spring secrets (no subir)
+# secrets spring 
 backend/src/main/resources/application.properties
 backend/src/main/resources/firebase-service-account.json
 
-# ---------- firebase client (no subir config real) ----------
+# firebase (cliente) - config
 frontend/android/app/google-services.json
 frontend/lib/config/firebase_options.dart
 
-# ---------- google maps local ----------
+# google maps (api key)
 frontend/android/app/src/main/res/values/google_maps_api.xml
 
-# ---------- env ----------
+# env
 .env
 *.env
 
-# ---------- no subir zips ----------
+# archivos comprimidos
 *.zip
 
-# ---------- infra secrets / local ----------
+# infra (docker)
 infra/.env
 infra/docker_mysql/
 infra/secrets/application.properties
