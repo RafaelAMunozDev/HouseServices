@@ -1,6 +1,6 @@
 # Setup HouseServices
 
-Este documento explica como realiar la configuracion y el arranque para MySQL + Backend (Docker), de manera que ya esta todo preconfigurado para que sea mas facil montar la respectiva infraesctructura.
+Este documento explica como realizar la configuracion y el arranque para MySQL + Backend (Docker), de manera que ya está todo preconfigurado para que sea más facil levantar la respectiva infraesctructura.
 También al final de este documento, veremos los archvios necesarios para que la APP ( forntend ) pueda arrancar sin problemas.
 
 ---
@@ -45,7 +45,7 @@ Ej: 8080.
 ### FIREBASE_STORAGE_BUCKET
 Bucket de Firebase Storage del proyecto (el backend lo usa para subir/leer ficheros).
 Debe coincidir con el proyecto del firebase-service-account.json. Este se obtiene desde la consola de Firebase ya que es el nombre principal y suele tener un formato similar a:
-`nombre-proyecto.appspot.com`.
+`nombre-proyecto.appspot.com` o `nombre-proyecto.firebasestorage.app`.
 
 ### 1.2 Ficheros necesarios (secrets)
 Para que el backend arranque con Docker, se esperan estos ficheros locales:
@@ -135,11 +135,13 @@ Por último y muy importante, se deberá crear un fichero para establecer la API
 
 Con un contenido como este donde se insertará la respectiva API Key:
 
+```xml
 <resources>
     <string name="google_maps_key" translatable="false">
         TU_GOOGLE_MAPS_API_KEY
     </string>
 </resources>
+```
 
 ---
 
