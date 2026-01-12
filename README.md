@@ -96,7 +96,7 @@ MIT — ver fichero `LICENSE`.
 
 <p align="center">
   <img src="screenshots/05_reserva.png" width="210" />
-  <img src="screenshots/06_favoritos.png" width="210" />
-  <img src="screenshots/07_perfil.png" width="210" />
+  <img src="screenshots/09_favoritos.png" width="210" />
+  <img src="screenshots/06_perfil.png" width="210" />
   <img src="screenshots/08_serviciosgestion.png" width="210" />
 </p>
