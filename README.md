@@ -91,12 +91,16 @@ MIT — ver fichero `LICENSE`.
   <img src="screenshots/01_principal.png" width="210" />
   <img src="screenshots/02_login.png" width="210" />
   <img src="screenshots/03_home.png" width="210" />
-  <img src="screenshots/04_detalle.png" width="210" />
 </p>
 
 <p align="center">
+  <img src="screenshots/04_detalle.png" width="210" />
   <img src="screenshots/05_reserva.png" width="210" />
   <img src="screenshots/09_favoritos.png" width="210" />
+</p>
+
+<p align="center">
   <img src="screenshots/06_perfil.png" width="210" />
   <img src="screenshots/08_serviciosgestion.png" width="210" />
+  <img src="screenshots/07_configuracion.png" width="210" />
 </p>
