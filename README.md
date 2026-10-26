@@ -1,91 +1,93 @@
 # HouseServices
 
-Aplicación móvil para **contratar y ofrecer servicios a domicilio**, con un backend que implementa una **API REST propia** y un despliegue sencillo para levantar la infraestructura local con **Docker**.
+**English** · [Español](README.es.md)
 
-## Tecnologías utilizadas
+Mobile app for **booking and offering home services**, with a backend that implements its **own REST API** and a simple setup to run the local infrastructure with **Docker**.
 
-- **App (Frontend):** Flutter (Dart)
-- **API (Backend):** Kotlin + Spring Boot
-- **Base de datos:** MySQL
-- **Infraestructura local:** Docker + Docker Compose (levanta MySQL + backend)
-- **Firebase Auth:** registro e inicio de sesión
-- **Firebase Storage:** subida y gestión de imágenes
-- **Firebase Cloud Messaging (FCM):** notificaciones push
-- **Cloud Firestore:** favoritos (servicios marcados por el usuario)
-- **Google Maps API:** mapa y selección/visualización de ubicación
-- **Control de versiones:** Git + GitHub
-- **Prototipado UI/UX:** Figma
+## Technologies
 
-## Prototipo (Figma)
+- **App (frontend):** Flutter (Dart)
+- **API (backend):** Kotlin + Spring Boot
+- **Database:** MySQL
+- **Local infrastructure:** Docker + Docker Compose (starts MySQL + backend)
+- **Firebase Auth:** sign-up and sign-in
+- **Firebase Storage:** image upload and management
+- **Firebase Cloud Messaging (FCM):** push notifications
+- **Cloud Firestore:** favorites (services saved by the user)
+- **Google Maps API:** map and location picking/display
+- **Version control:** Git + GitHub
+- **UI/UX prototyping:** Figma
 
-Prototipo navegable: 
+## Prototype (Figma)
+
+Interactive prototype:
 https://www.figma.com/proto/B4juOMcrYVCbK1gicMqVDt/HouseService?node-id=0-1&t=xdG3FS1GkZtTF3uk-1
 
-## Funcionalidades
+## Features
 
-### Para clientes
+### For customers
 
-- Registro e inicio de sesión con perfil completo (datos personales, ubicacion y foto opcional).
-- Listado de servicios por categoría, busqueda por nombre/descripcion y seccion de destacados.
-- Visualización de los detalles del servicio mostrando imágenes, precio por hora, descripción, observaciones y valoración media del trabajador.
-- Reserva de servicios seleccionando dia y hora disponible y anadiendo observaciones.
-- Cancelacion de solicitudes segun las reglas definidas en el flujo de reserva.
-- Gestion de favoritos para guardar o quitar servicios y acceder a ellos rapidamente.
-- Historial de servicios y valoraciones con puntuacion por estrellas y comentario tras finalizar el servicio.
+- Sign-up and sign-in with a full profile (personal details, location and optional photo).
+- Services listed by category, search by name/description and a featured section.
+- Service details with images, hourly price, description, notes and the worker's average rating.
+- Booking by choosing an available day and time and adding notes.
+- Cancelling requests according to the rules defined in the booking flow.
+- Favorites to save or remove services and access them quickly.
+- Service history and reviews with a star rating and a comment once the service is finished.
 
-### Para trabajadores
+### For workers
 
-- Publicacion de servicios con categoria, precio, descripcion, imagenes y observaciones.
-- Gestion de la disponibilidad mediante horarios por dia y excepciones (dias no disponibles o franjas especiales).
-- Gestion de solicitudes recibidas con opcion de aceptar o denegar y notificacion al cliente.
-- Gestion del servicio confirmado permitiendo marcar inicio y finalizacion y realizar seguimiento por estados.
+- Publishing services with category, price, description, images and notes.
+- Availability management with daily schedules and exceptions (unavailable days or special time slots).
+- Managing incoming requests, with the option to accept or decline them and notify the customer.
+- Managing confirmed services: marking start and finish, and tracking them by status.
 
-### Notificaciones
+### Notifications
 
-- Notificaciones push (FCM) para eventos relevantes (nueva solicitud, aceptacion/denegacion, cambios de estado), ademas de avisos dentro de la app con notificaciones personalizadas. 
+- Push notifications (FCM) for relevant events (new request, accepted/declined, status changes), plus in-app alerts with custom notifications.
 
-## Roles (cliente y trabajador)
+## Roles (customer and worker)
 
-- Un mismo usuario puede actuar como **cliente** o como **trabajador**.
-- Desde la sección de **servicios ofrecidos**, la app muestra un diálogo para **activar el rol de trabajador** (pensado como base para una futura verificación real en un entorno de producción antes de permitir publicar servicios).
+- The same user can act as a **customer** or as a **worker**.
+- From the **offered services** section, the app shows a dialog to **activate the worker role** (designed as the basis for real verification in a production environment before allowing users to publish services).
 
-## Instalación y arranque
+## Installation and startup
 
-La guía completa está en `docs/SETUP.md` e incluye:
-- Arranque de **MySQL + backend** con Docker Compose.
-- Archivos necesarios para Firebase (cliente y Admin SDK) y Google Maps.
-- Ejecución de la app indicando la URL del backend mediante `--dart-define`.
+The full guide is in `docs/SETUP.md` (in Spanish) and covers:
+- Starting **MySQL + backend** with Docker Compose.
+- The files needed for Firebase (client and Admin SDK) and Google Maps.
+- Running the app with the backend URL passed through `--dart-define`.
 
-## Credenciales y configuración (no incluidas en el repo)
+## Credentials and configuration (not included in the repo)
 
-Por seguridad, este repositorio **NO incluye credenciales reales** (Firebase Admin SDK, `application.properties`, claves de Google Maps, etc.).
-Para saber que ficheros o claves se necesitan para que todo funcione correcto, consultar `docs/SETUP.md`.
+For security reasons, this repository does **NOT include real credentials** (Firebase Admin SDK, `application.properties`, Google Maps keys, etc.).
+To find out which files or keys are needed for everything to work, see `docs/SETUP.md`.
 
-## Estructura del repositorio
-- `frontend/` -> app Flutter (Dart)
+## Repository structure
+- `frontend/` -> Flutter app (Dart)
   - `lib/` -> UI, controllers, models, services, utils
-  - `android/`, `ios/`, `web/` -> plataformas
-- `backend/` -> API REST Kotlin/Spring Boot
-  - `controllers/` -> endpoints HTTP
-  - `services/` -> lógica de negocio
-  - `repositories/` -> acceso a datos (MySQL)
-  - `models/` + `dto/` -> entidades y objetos de intercambio
-- `infra/` -> Docker Compose + scripts de inicialización MySQL
-  - `db/init/` -> SQL de arranque
-- `docs/` -> documentación (SETUP, etc.)
-- `resources/` -> recursos para documentación/README (logos e imágenes)
+  - `android/`, `ios/`, `web/` -> platforms
+- `backend/` -> Kotlin/Spring Boot REST API
+  - `controllers/` -> HTTP endpoints
+  - `services/` -> business logic
+  - `repositories/` -> data access (MySQL)
+  - `models/` + `dto/` -> entities and data transfer objects
+- `infra/` -> Docker Compose + MySQL initialization scripts
+  - `db/init/` -> startup SQL
+- `docs/` -> documentation (SETUP, etc.)
+- `resources/` -> resources for the documentation/README (logos and images)
 
-## Autoría y recursos
-- El **diseño**, el **logo** y los recursos gráficos principales del proyecto han sido creados por **Rafael Antonio Muñoz Fernandez**.
-- Nota: algunos iconos/logos/imágenes de terceros (p. ej. marcas de Google/Apple/Facebook) pertenecen a sus respectivos propietarios.
+## Authorship and resources
+- The project's **design**, **logo** and main graphic resources were created by **Rafael Antonio Muñoz Fernández**.
+- Note: some third-party icons/logos/images (e.g. Google/Apple/Facebook brands) belong to their respective owners.
 
-## Seguridad
-Si detectas algún problema de seguridad, revisa `SECURITY.md`.
+## Security
+If you find a security issue, see `SECURITY.md`.
 
-## Licencia
-MIT — ver fichero `LICENSE`.
+## License
+MIT — see the `LICENSE` file.
 
-## Capturas de la APP 
+## App screenshots
 
 <p align="center">
   <img src="screenshots/01_principal.png" width="210" />
