@@ -53,7 +53,7 @@ https://www.figma.com/proto/B4juOMcrYVCbK1gicMqVDt/HouseService?node-id=0-1&t=xd
 
 ## Installation and startup
 
-The full guide is in `docs/SETUP.md` (in Spanish) and covers:
+The full guide is in [docs/SETUP.md](docs/SETUP.md) and covers:
 - Starting **MySQL + backend** with Docker Compose.
 - The files needed for Firebase (client and Admin SDK) and Google Maps.
 - Running the app with the backend URL passed through `--dart-define`.
@@ -61,7 +61,7 @@ The full guide is in `docs/SETUP.md` (in Spanish) and covers:
 ## Credentials and configuration (not included in the repo)
 
 For security reasons, this repository does **NOT include real credentials** (Firebase Admin SDK, `application.properties`, Google Maps keys, etc.).
-To find out which files or keys are needed for everything to work, see `docs/SETUP.md`.
+To find out which files or keys are needed for everything to work, see [docs/SETUP.md](docs/SETUP.md).
 
 ## Repository structure
 - `frontend/` -> Flutter app (Dart)
@@ -82,10 +82,10 @@ To find out which files or keys are needed for everything to work, see `docs/SET
 - Note: some third-party icons/logos/images (e.g. Google/Apple/Facebook brands) belong to their respective owners.
 
 ## Security
-If you find a security issue, see `SECURITY.md`.
+If you find a security issue, see [SECURITY.md](SECURITY.md).
 
 ## License
-MIT — see the `LICENSE` file.
+MIT — see the [LICENSE](LICENSE) file.
 
 ## App screenshots
 

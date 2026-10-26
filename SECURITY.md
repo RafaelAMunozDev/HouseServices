@@ -1,5 +1,7 @@
 # Security Policy
 
-Si encuentras una vulnerabilidad o crees que se ha filtrado algún secreto, por favor abre un issue describiendo el problema (sin publicar claves) o contáctame por privado.
+**English** · [Español](SECURITY.es.md)
 
-Gracias.
+If you find a vulnerability or think a secret has been leaked, please open an issue describing the problem (without publishing any keys) or contact me privately.
+
+Thank you.

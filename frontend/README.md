@@ -1,16 +1,15 @@
-# frontend
+# HouseServices — frontend
 
-Poryecto HouseServices Rafael Antonio Munoz Fernandez.
+**English** · [Español](README.es.md)
 
-## Getting Started
+Flutter (Dart) mobile app for the HouseServices project, by Rafael Antonio Muñoz Fernández.
 
-This project is a starting point for a Flutter application.
+- Project overview, features and screenshots: [main README](../README.md).
+- Required Firebase and Google Maps files and how to run the app: [docs/SETUP.md](../docs/SETUP.md#2-frontend-flutter).
 
-A few resources to get you started if this is your first Flutter project:
+Quick start (once the configuration files are in place):
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter pub get
+flutter run --dart-define=URL_BASE={BACKEND_URL}/api
+```
